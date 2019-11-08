@@ -1,5 +1,5 @@
 # CS683 Lab2 Report 
-### Your name
+### Larry Barker
 
 ## Design and Implementation
 
