@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ public class ProjectDetailFragment extends Fragment {
 
     private int projectId ;
     private TextView titleTextView, summaryTextView;
+    private Switch favoriteSwitch;
 
     public ProjectDetailFragment() {
         // Required empty public constructor
@@ -32,6 +34,7 @@ public class ProjectDetailFragment extends Fragment {
 
         titleTextView = view.findViewById(R.id.projTitleTextViewId);
         summaryTextView = view.findViewById(R.id.projSummaryTextViewId);
+        favoriteSwitch = view.findViewById(R.id.projectFavoriteSwitchId);
 
         projectId = 0;
 
@@ -45,6 +48,7 @@ public class ProjectDetailFragment extends Fragment {
         projectId = projId;
         titleTextView.setText(Project.projects[projectId].getTitle());
         summaryTextView.setText(Project.projects[projectId].getSummary());
+        favoriteSwitch.setChecked(Project.projects[projectId].getFavorite());
     }
 
     public int getProjectId(){

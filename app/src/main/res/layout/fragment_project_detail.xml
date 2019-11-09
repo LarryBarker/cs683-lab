@@ -16,12 +16,19 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:id="@+id/projSummaryTextViewId"
-            android:text="@string/project_desp" />
+    <TextView
+        android:id="@+id/projSummaryTextViewId"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/project_desp" />
+
+    <Switch
+        android:id="@+id/projectFavoriteSwitchId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Favorite" />
 
 </LinearLayout>
 

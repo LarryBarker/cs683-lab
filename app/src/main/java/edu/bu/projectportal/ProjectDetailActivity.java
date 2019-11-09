@@ -1,6 +1,5 @@
 package edu.bu.projectportal;
 
-
 import android.os.Bundle;
 import android.view.View;
 
@@ -29,8 +28,6 @@ public class ProjectDetailActivity extends AppCompatActivity {
         transaction.add(R.id.proDetailfragContainer, projectDetailFragment);
         // commit the transaction.
         transaction.commit();
-
-
     }
 
     public void onClick(View view){
