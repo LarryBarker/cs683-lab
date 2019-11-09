@@ -17,23 +17,32 @@ public class Project {
                     Arrays.asList("Ron Burgandy", "Dan the Weather Man"),
                     Arrays.asList("https://openweathermap.org"),
                     Arrays.asList("weather", "forecast", "temperature"),
+                    true
+            ),
+            new Project (
+                    "Connect Me",
+                    "Connect Me links you to business professionals with similar intereests in your area.",
+                    Arrays.asList("Larry Barker", "Professor Yuting"),
+                    Arrays.asList("https://connect.me"),
+                    Arrays.asList("social", "networking", "professional"),
                     false
             ),
-//            new Project (
-//                    "Connect Me",
-//                    "Connect Me is an app ... ",
-//                    false
-//            ),
-//            new Project(
-//                    "What to Eat",
-//                    "What to Eat is an app ...",
-//                    false
-//            ),
-//            new Project (
-//                    "Project Portal",
-//                    "Project Portal is an app ...",
-//                    true
-//            )
+            new Project(
+                    "What to Eat",
+                    "What to Eat suggests healthier food options based on your eating habbits.",
+                    Arrays.asList("Larry Barker", "Josh Bond"),
+                    Arrays.asList("https://whattoeat.com"),
+                    Arrays.asList("food", "healthy", "meals", "diet"),
+                    false
+            ),
+            new Project (
+                    "Project Portal",
+                    "Project Portal is a group collaboration project for BU MET CS683",
+                    Arrays.asList("Larry Barker", "Josh Bond", "Professor Yuting", "Steve Chin"),
+                    Arrays.asList("https://github.com/CS683/cs683-labs-project-portal-LarBearrr"),
+                    Arrays.asList("android", "java", "bu", "met"),
+                    true
+            )
     };
 
 
