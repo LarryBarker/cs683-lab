@@ -1,6 +1,8 @@
 package edu.bu.projectportal;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 import java.util.List;
 
@@ -20,7 +25,7 @@ public class ProjectDetailFragment extends Fragment {
     private final static String TAG = ProjectDetailFragment.class.getSimpleName ();
 
     private int projectId ;
-    private TextView titleTextView, summaryTextView, authorsList;
+    private TextView titleTextView, summaryTextView, authorsList, linksList, keywordsList;
     private Switch favoriteSwitch;
 
     public ProjectDetailFragment() {
@@ -37,6 +42,8 @@ public class ProjectDetailFragment extends Fragment {
         titleTextView = view.findViewById(R.id.projTitleTextViewId);
         summaryTextView = view.findViewById(R.id.projSummaryTextViewId);
         authorsList = view.findViewById(R.id.projectAuthorsListId);
+        linksList = view.findViewById(R.id.projectLinksListId);
+        keywordsList = view.findViewById(R.id.projectKeywordsListId);
         favoriteSwitch = view.findViewById(R.id.projectFavoriteSwitchId);
 
         projectId = 0;
@@ -52,10 +59,29 @@ public class ProjectDetailFragment extends Fragment {
         titleTextView.setText(Project.projects[projectId].getTitle());
         summaryTextView.setText(Project.projects[projectId].getSummary());
 
-        // https://reversecoding.net/java-8-convert-list-string-comma/
+        // Source: https://reversecoding.net/java-8-convert-list-string-comma/
         List<String> authors = Project.projects[projectId].getAuthors();
         String authorsCommandSeparated = String.join(", ", authors);
         authorsList.setText(authorsCommandSeparated);
+
+        List<String> links = Project.projects[projectId].getLinks();
+        String linksCommaSeparated = String.join(", ", links);
+        linksList.setText(linksCommaSeparated);
+
+        // Source: https://android-developers.googleblog.com/2008/03/linkify-your-text.html
+        Linkify.addLinks(linksList, Linkify.ALL);
+
+        List<String> keywords = Project.projects[projectId].getKeywords();
+        String keywordsCommaSeparated = String.join(", ", keywords);
+        keywordsList.setText(keywordsCommaSeparated);
+
+        // I wanted to use Chips to display the keywords as a tag list, but I couldn't get this working.
+        // The AVD just kept saying 'ProjectPortal has stopped' and wouldn't run
+//        for(String keyword : keywords) {
+//            Chip keywordChip = new Chip(getContext());
+//            keywordChip.setText(keyword);
+//            keywordsChipGroup.addView(keywordChip);
+//        }
 
         favoriteSwitch.setChecked(Project.projects[projectId].getFavorite());
     }

@@ -15,7 +15,9 @@ public class Project {
                     "Weather Forecast",
                     "Weather Forecast brings you the latest temperature and forecasts in your area.",
                     Arrays.asList("Ron Burgandy", "Dan the Weather Man"),
-                    true
+                    Arrays.asList("https://openweathermap.org"),
+                    Arrays.asList("weather", "forecast", "temperature"),
+                    false
             ),
 //            new Project (
 //                    "Connect Me",
@@ -38,6 +40,8 @@ public class Project {
     private String title;
     private String summary;
     private List<String> authors;
+    private List<String> links;
+    private List<String> keywords;
     private Boolean isFavorite;
 
 
@@ -45,11 +49,15 @@ public class Project {
             @NotNull String title,
             @NotNull String summary,
             @NotNull List<String> authors,
+            @NotNull List<String> links,
+            @NotNull List<String> keywords,
             @NotNull Boolean isFavorite
     ) {
         this.title = title;
         this.summary = summary;
         this.authors = authors;
+        this.links = links;
+        this.keywords = keywords;
         this.isFavorite = isFavorite;
     }
 
@@ -64,18 +72,18 @@ public class Project {
     public List<String> getAuthors() {
         return authors;
     }
-//
-//    public List<String> getLinks() {
-//        return links;
-//    }
+
+    public List<String> getLinks() {
+        return links;
+    }
 
     public Boolean getFavorite() {
         return isFavorite;
     }
 
-//    public List<String> getKeywords() {
-//        return keywords;
-//    }
+    public List<String> getKeywords() {
+        return keywords;
+    }
 
     public void setTitle(String title) {
         this.title = title;
@@ -87,11 +95,11 @@ public class Project {
 
     public void setAuthors(List<String> authors) { this.authors = authors; }
 //
-//    public void setLinks(List<String> links) { this.links = links; }
+    public void setLinks(List<String> links) { this.links = links; }
 
     public void setIsFavorite(Boolean isFavorite) { this.isFavorite = isFavorite; }
 //
-//    public void setKeywords(List<String> keywords) { this.keywords = keywords; }
+    public void setKeywords(List<String> keywords) { this.keywords = keywords; }
 
     @NotNull
     @Override
@@ -101,9 +109,9 @@ public class Project {
                 "title='" + title + '\'' +
                 ", summary='" + summary + '\'' +
                 ", authors='" + authors + '\'' +
-//                ", links='" + links + '\'' +
+                ", links='" + links + '\'' +
                 ", isFavorite='" + isFavorite + '\'' +
-//                ", keywords='" + keywords + '\'' +
+                ", keywords='" + keywords + '\'' +
                 '}';
     }
 

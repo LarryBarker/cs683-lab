@@ -29,6 +29,18 @@
         android:layout_height="wrap_content"
         android:text="This is the list of authors" />
 
+    <TextView
+        android:id="@+id/projectLinksListId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is the list of links" />
+
+    <TextView
+        android:id="@+id/projectKeywordsListId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is the list of keywords" />
+
     <Switch
         android:id="@+id/projectFavoriteSwitchId"
         android:layout_width="match_parent"
