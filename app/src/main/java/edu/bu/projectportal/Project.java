@@ -13,39 +13,43 @@ public class Project {
     public final static Project[] projects = {
             new Project(
                     "Weather Forecast",
-                    "Weather Forecast is an app ...",
+                    "Weather Forecast brings you the latest temperature and forecasts in your area.",
+                    Arrays.asList("Ron Burgandy", "Dan the Weather Man"),
                     true
             ),
-            new Project (
-                    "Connect Me",
-                    "Connect Me is an app ... ",
-                    false
-            ),
-            new Project(
-                    "What to Eat",
-                    "What to Eat is an app ...",
-                    false
-            ),
-            new Project (
-                    "Project Portal",
-                    "Project Portal is an app ...",
-                    true
-            )
+//            new Project (
+//                    "Connect Me",
+//                    "Connect Me is an app ... ",
+//                    false
+//            ),
+//            new Project(
+//                    "What to Eat",
+//                    "What to Eat is an app ...",
+//                    false
+//            ),
+//            new Project (
+//                    "Project Portal",
+//                    "Project Portal is an app ...",
+//                    true
+//            )
     };
 
 
     private String title;
     private String summary;
+    private List<String> authors;
     private Boolean isFavorite;
 
 
     public Project(
             @NotNull String title,
             @NotNull String summary,
+            @NotNull List<String> authors,
             @NotNull Boolean isFavorite
     ) {
         this.title = title;
         this.summary = summary;
+        this.authors = authors;
         this.isFavorite = isFavorite;
     }
 
@@ -57,9 +61,9 @@ public class Project {
         return summary;
     }
 
-//    public List<String> getAuthors() {
-//        return authors;
-//    }
+    public List<String> getAuthors() {
+        return authors;
+    }
 //
 //    public List<String> getLinks() {
 //        return links;
@@ -81,7 +85,7 @@ public class Project {
         this.summary = summary;
     }
 
-//    public void setAuthors(List<String> authors) { this.authors = authors; }
+    public void setAuthors(List<String> authors) { this.authors = authors; }
 //
 //    public void setLinks(List<String> links) { this.links = links; }
 
@@ -96,7 +100,7 @@ public class Project {
         return "Project{" +
                 "title='" + title + '\'' +
                 ", summary='" + summary + '\'' +
-//                ", authors='" + authors + '\'' +
+                ", authors='" + authors + '\'' +
 //                ", links='" + links + '\'' +
                 ", isFavorite='" + isFavorite + '\'' +
 //                ", keywords='" + keywords + '\'' +

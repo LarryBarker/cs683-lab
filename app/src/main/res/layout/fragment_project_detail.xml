@@ -23,12 +23,18 @@
         android:layout_marginStart="8dp"
         android:text="@string/project_desp" />
 
+    <TextView
+        android:id="@+id/projectAuthorsListId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is the list of authors" />
+
     <Switch
         android:id="@+id/projectFavoriteSwitchId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:checked="false"
-        android:text="Favorite" />
+        android:text="@string/project_favorite_label" />
 
 </LinearLayout>
 
